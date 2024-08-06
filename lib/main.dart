@@ -6,6 +6,8 @@ import 'package:tap_code/src/controllers/settings/settings_service.dart';
 import 'package:tap_code/src/app.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
   final settingsController = SettingsController(SettingsService());

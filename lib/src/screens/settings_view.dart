@@ -22,7 +22,14 @@ class SettingsView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: ThemeModeSelector(controller: controller),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ThemeModeSelector(controller: controller),
+            ],
+          ),
+        ),
       ),
     );
   }
