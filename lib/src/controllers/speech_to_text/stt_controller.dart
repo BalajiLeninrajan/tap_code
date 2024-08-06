@@ -15,10 +15,12 @@ class SttController extends ChangeNotifier {
     if (isListening) {
       _isListening = false;
       _speechToText.stop();
+      notifyListeners();
       return true;
     }
 
     if (!await _speechToText.initialize()) {
+      notifyListeners();
       return false;
     }
 

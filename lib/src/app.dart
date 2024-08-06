@@ -4,17 +4,21 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:tap_code/src/controllers/settings/settings_controller.dart';
+import 'package:tap_code/src/controllers/speech_to_text/stt_controller.dart';
+
 import 'package:tap_code/src/screens/home.dart';
 import 'package:tap_code/src/screens/settings_view.dart';
 
 /// The Widget that configures your application.
-class MyApp extends StatelessWidget {
-  const MyApp({
+class TapCode extends StatelessWidget {
+  const TapCode({
     super.key,
     required this.settingsController,
+    required this.sttController,
   });
 
   final SettingsController settingsController;
+  final SttController sttController;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +77,7 @@ class MyApp extends StatelessWidget {
                       return SettingsView(controller: settingsController);
                     case HomeView.routeName:
                     default:
-                      return const HomeView();
+                      return HomeView(sttController: sttController);
                   }
                 },
               );
