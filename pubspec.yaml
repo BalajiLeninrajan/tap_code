@@ -10,10 +10,13 @@ environment:
   sdk: '>=3.4.4 <4.0.0'
 
 dependencies:
+  dynamic_color: ^1.7.0
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  shared_preferences: ^2.3.1
+  speech_to_text: ^6.6.2
 
 dev_dependencies:
   flutter_test:
