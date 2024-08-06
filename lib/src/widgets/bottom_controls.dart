@@ -13,11 +13,11 @@ class BottomControls extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.play_arrow),
+            icon: const Icon(Icons.restart_alt),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.restart_alt),
+            icon: const Icon(Icons.play_arrow),
           )
         ],
       ),
