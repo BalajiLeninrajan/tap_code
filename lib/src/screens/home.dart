@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const HomeAppBar(),
-      body: const TranslationCards(),
+      body: TranslationCards(sttController: sttController),
       bottomNavigationBar: const BottomControls(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: RecordingButton(sttController: sttController),

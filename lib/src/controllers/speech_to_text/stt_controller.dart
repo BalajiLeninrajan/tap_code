@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -5,8 +6,7 @@ import 'package:speech_to_text/speech_to_text.dart';
 class SttController extends ChangeNotifier {
   final SpeechToText _speechToText = SpeechToText();
 
-  String _text = '';
-  String get text => _text;
+  final ValueNotifier<String> text = ValueNotifier<String>('');
 
   bool _isListening = false;
   bool get isListening => _isListening;
@@ -24,11 +24,12 @@ class SttController extends ChangeNotifier {
       return false;
     }
 
-    _text = '';
+    text.value = '';
     _isListening = true;
     _speechToText.listen(
       onResult: (SpeechRecognitionResult result) {
-        _text = result.recognizedWords;
+        text.value = result.recognizedWords;
+        notifyListeners();
       },
     );
 
