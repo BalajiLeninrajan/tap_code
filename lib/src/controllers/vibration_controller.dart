@@ -31,7 +31,7 @@ class VibrationController extends ChangeNotifier {
     'z': [3, 1, 3, 1, 1, 1, 1, 3],
   };
 
-  int vibrate(String text) {
+  int vibrate(String text, int vibrationLength) {
     List<int> pattern = [0];
     text.split('').forEach((String ch) {
       if (ch == ' ') {
@@ -41,7 +41,9 @@ class VibrationController extends ChangeNotifier {
         pattern += _morseCodeMap[ch]!;
       }
     });
-    Vibration.vibrate(pattern: pattern.map((int x) => x * 200).toList());
+    Vibration.vibrate(
+      pattern: pattern.map((int x) => x * vibrationLength).toList(),
+    );
     return pattern.reduce((int a, int b) => a + b);
   }
 }

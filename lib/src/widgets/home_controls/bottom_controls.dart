@@ -47,9 +47,8 @@ class _BottomControlsState extends State<BottomControls> {
                     setState(() {
                       _isVibrating = true;
                     });
-                    int duration = widget.vibrationController.vibrate(
-                      widget.geminiController.generatedText,
-                    );
+                    int duration = widget.vibrationController
+                        .vibrate(widget.geminiController.generatedText, 200);
                     await Future.delayed(Duration(milliseconds: duration));
                     setState(() {
                       _isVibrating = false;
