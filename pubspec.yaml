@@ -19,6 +19,7 @@ dependencies:
   google_generative_ai: ^0.4.4
   shared_preferences: ^2.3.1
   speech_to_text: ^6.6.2
+  vibration: ^1.9.0
 
 dev_dependencies:
   flutter_test:
