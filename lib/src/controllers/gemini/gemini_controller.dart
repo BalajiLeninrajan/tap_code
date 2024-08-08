@@ -10,13 +10,13 @@ class GeminiController extends ChangeNotifier {
   final ValueNotifier<String> generatedText = ValueNotifier<String>('');
   final ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
 
-  void _generate(String text) async {
+  void generate(String text) async {
     isLoading.value = true;
     // final GenerateContentResponse response = await _model.generateContent(
     //   [Content.text(text)],
     // );
     // generatedText.value = response.text ?? '';
-    await Future.delayed(Durations.extralong1);
+    await Future.delayed(Duration(seconds: 10));
     isLoading.value = false;
   }
 }
