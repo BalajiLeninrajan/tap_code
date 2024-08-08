@@ -37,7 +37,7 @@ class VibrationController extends ChangeNotifier {
       if (ch == ' ') {
         pattern.removeLast();
         pattern.add(7);
-      } else {
+      } else if (_morseCodeMap.containsKey(ch)) {
         pattern += _morseCodeMap[ch]!;
       }
     });
