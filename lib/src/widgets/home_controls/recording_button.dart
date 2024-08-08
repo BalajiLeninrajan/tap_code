@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:avatar_glow/avatar_glow.dart';
+
 import 'package:tap_code/src/controllers/gemini/gemini_controller.dart';
 import 'package:tap_code/src/controllers/speech_to_text/stt_controller.dart';
-import 'package:avatar_glow/avatar_glow.dart';
 
 class RecordingButton extends StatefulWidget {
   const RecordingButton({
