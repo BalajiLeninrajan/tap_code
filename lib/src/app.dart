@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tap_code/src/controllers/gemini_controller.dart';
 import 'package:tap_code/src/controllers/settings/settings_controller.dart';
 import 'package:tap_code/src/controllers/stt_controller.dart';
+import 'package:tap_code/src/controllers/vibration_controller.dart';
 
 import 'package:tap_code/src/screens/home.dart';
 import 'package:tap_code/src/screens/settings_view.dart';
@@ -17,11 +18,13 @@ class TapCode extends StatelessWidget {
     required this.settingsController,
     required this.sttController,
     required this.geminiController,
+    required this.vibrationController,
   });
 
   final SettingsController settingsController;
   final SttController sttController;
   final GeminiController geminiController;
+  final VibrationController vibrationController;
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +86,7 @@ class TapCode extends StatelessWidget {
                       return HomeView(
                         sttController: sttController,
                         geminiController: geminiController,
+                        vibrationController: vibrationController,
                       );
                   }
                 },
