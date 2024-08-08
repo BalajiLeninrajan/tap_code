@@ -27,7 +27,10 @@ class HomeView extends StatelessWidget {
         sttController: sttController,
         geminiController: geminiController,
       ),
-      bottomNavigationBar: const BottomControls(),
+      bottomNavigationBar: BottomControls(
+        sttController: sttController,
+        geminiController: geminiController,
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: RecordingButton(
         sttController: sttController,

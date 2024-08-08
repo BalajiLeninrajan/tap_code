@@ -27,7 +27,7 @@ class LLMResultCard extends StatelessWidget {
                     )
                   : SingleChildScrollView(
                       child: Text(
-                        'Card 2',
+                        geminiController.generatedText,
                         style: TextStyle(
                           color: Theme.of(context).colorScheme.onSecondary,
                           fontSize: 24,
