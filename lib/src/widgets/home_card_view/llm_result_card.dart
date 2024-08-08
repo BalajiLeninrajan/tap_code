@@ -14,28 +14,29 @@ class LLMResultCard extends StatelessWidget {
     return Card(
       color: Theme.of(context).colorScheme.secondary,
       child: ValueListenableBuilder(
-          valueListenable: geminiController.isLoading,
-          builder: (BuildContext context, bool isLoading, Widget? widget) {
-            return Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: isLoading
-                  ? Center(
-                      child: CircularProgressIndicator(
+        valueListenable: geminiController.isLoading,
+        builder: (BuildContext context, bool isLoading, Widget? widget) {
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: isLoading
+                ? Center(
+                    child: CircularProgressIndicator(
+                      color: Theme.of(context).colorScheme.onSecondary,
+                      strokeWidth: 2,
+                    ),
+                  )
+                : SingleChildScrollView(
+                    child: Text(
+                      geminiController.generatedText,
+                      style: TextStyle(
                         color: Theme.of(context).colorScheme.onSecondary,
-                        strokeWidth: 2,
-                      ),
-                    )
-                  : SingleChildScrollView(
-                      child: Text(
-                        geminiController.generatedText,
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSecondary,
-                          fontSize: 24,
-                        ),
+                        fontSize: 24,
                       ),
                     ),
-            );
-          }),
+                  ),
+          );
+        },
+      ),
     );
   }
 }
