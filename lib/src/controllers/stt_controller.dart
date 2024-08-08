@@ -29,7 +29,7 @@ class SttController extends ChangeNotifier {
     _isListening = true;
     _speechToText.listen(
       onResult: (SpeechRecognitionResult result) {
-        text.value = result.recognizedWords;
+        text.value = result.recognizedWords.toLowerCase();
         notifyListeners();
       },
     );

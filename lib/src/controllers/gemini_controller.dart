@@ -41,7 +41,7 @@ class GeminiController extends ChangeNotifier {
       isLoading.value = false;
       return;
     }
-    generatedText = response.text ?? '';
+    generatedText = response.text?.toLowerCase() ?? '';
     isLoading.value = false;
   }
 }
