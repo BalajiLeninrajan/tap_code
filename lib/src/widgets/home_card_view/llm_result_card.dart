@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tap_code/src/controllers/gemini/gemini_controller.dart';
+import 'package:tap_code/src/controllers/gemini_controller.dart';
 
 class LLMResultCard extends StatelessWidget {
   const LLMResultCard({

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'package:tap_code/src/controllers/gemini/gemini_controller.dart';
+import 'package:tap_code/src/controllers/gemini_controller.dart';
 import 'package:tap_code/src/controllers/settings/settings_controller.dart';
-import 'package:tap_code/src/controllers/speech_to_text/stt_controller.dart';
+import 'package:tap_code/src/controllers/stt_controller.dart';
 
 import 'package:tap_code/src/screens/home.dart';
 import 'package:tap_code/src/screens/settings_view.dart';

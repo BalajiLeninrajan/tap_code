@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tap_code/src/controllers/gemini/gemini_controller.dart';
-import 'package:tap_code/src/controllers/speech_to_text/stt_controller.dart';
+import 'package:tap_code/src/controllers/gemini_controller.dart';
+import 'package:tap_code/src/controllers/stt_controller.dart';
 
 class BottomControls extends StatelessWidget {
   const BottomControls({
