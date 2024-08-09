@@ -44,6 +44,10 @@ class VibrationController extends ChangeNotifier {
     Vibration.vibrate(
       pattern: pattern.map((int x) => x * vibrationLength).toList(),
     );
-    return pattern.reduce((int a, int b) => a + b);
+    return pattern.reduce((int a, int b) => a + b) * vibrationLength;
+  }
+
+  void stop() {
+    Vibration.cancel();
   }
 }

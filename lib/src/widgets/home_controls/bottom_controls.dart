@@ -42,7 +42,12 @@ class _BottomControlsState extends State<BottomControls> {
           ),
           IconButton(
             onPressed: _isVibrating
-                ? null
+                ? () {
+                    widget.vibrationController.stop();
+                    setState(() {
+                      _isVibrating = false;
+                    });
+                  }
                 : () async {
                     setState(() {
                       _isVibrating = true;
@@ -54,7 +59,7 @@ class _BottomControlsState extends State<BottomControls> {
                       _isVibrating = false;
                     });
                   },
-            icon: const Icon(Icons.play_arrow),
+            icon: Icon(_isVibrating ? Icons.stop : Icons.play_arrow),
           )
         ],
       ),

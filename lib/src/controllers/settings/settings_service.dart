@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// A service that stores and retrieves user settings.
 class SettingsService {
   static const String kPrefThemeMode = 'ThemeMode';
-  static const String kPrefVibrationIntensity = 'VibrationIntensity';
+  static const String kPrefVibrationDuration = 'VibrationDuration';
 
   Future<ThemeMode> themeMode() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -23,13 +23,13 @@ class SettingsService {
     prefs.setString(kPrefThemeMode, theme.name);
   }
 
-  Future<int> vibrationIntensity() async {
+  Future<double> vibrationDuration() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(kPrefVibrationIntensity) ?? 200;
+    return prefs.getDouble(kPrefVibrationDuration) ?? 200;
   }
 
-  Future<void> updateVibrationIntensity(int intensity) async {
+  Future<void> updateVibrationDuration(double duration) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setInt(kPrefVibrationIntensity, intensity);
+    prefs.setDouble(kPrefVibrationDuration, duration);
   }
 }

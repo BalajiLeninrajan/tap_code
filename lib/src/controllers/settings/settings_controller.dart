@@ -14,12 +14,12 @@ class SettingsController with ChangeNotifier {
   late ThemeMode _themeMode;
   ThemeMode get themeMode => _themeMode;
 
-  late int _vibrationIntensity;
-  int get vibrationIntensity => _vibrationIntensity;
+  late double _vibrationDuration;
+  double get vibrationDuration => _vibrationDuration;
 
   Future<void> loadSettings() async {
     _themeMode = await _settingsService.themeMode();
-    _vibrationIntensity = await _settingsService.vibrationIntensity();
+    _vibrationDuration = await _settingsService.vibrationDuration();
 
     notifyListeners();
   }
@@ -36,15 +36,13 @@ class SettingsController with ChangeNotifier {
     await _settingsService.updateThemeMode(newThemeMode);
   }
 
-  Future<void> updateVibrationIntensity(int? intensity) async {
-    if (intensity == null) return;
+  Future<void> updateVibrationDuration(double duration) async {
+    if (duration == _vibrationDuration) return;
 
-    if (intensity == _vibrationIntensity) return;
-
-    _vibrationIntensity = intensity;
+    _vibrationDuration = duration;
 
     notifyListeners();
 
-    await _settingsService.updateVibrationIntensity(intensity);
+    await _settingsService.updateVibrationDuration(duration);
   }
 }
