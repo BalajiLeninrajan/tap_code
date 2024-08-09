@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:flutter/services.dart';
 
 import 'package:tap_code/src/controllers/gemini_controller.dart';
 import 'package:tap_code/src/controllers/stt_controller.dart';
@@ -31,6 +32,7 @@ class _RecordingButtonState extends State<RecordingButton> {
       glowRadiusFactor: 0.4,
       child: FloatingActionButton(
         onPressed: () {
+          HapticFeedback.lightImpact();
           widget.sttController.listen().then(
             (bool exitStatus) {
               setState(() {});
@@ -49,8 +51,9 @@ class _RecordingButtonState extends State<RecordingButton> {
             },
           );
         },
-        child:
-            Icon(widget.sttController.isListening ? Icons.mic : Icons.mic_none),
+        child: Icon(
+          widget.sttController.isListening ? Icons.mic : Icons.mic_none,
+        ),
       ),
     );
   }

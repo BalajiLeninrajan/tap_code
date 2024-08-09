@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tap_code/src/controllers/settings/settings_controller.dart';
 
 class VibrationDurationSlider extends StatelessWidget {
@@ -24,6 +25,7 @@ class VibrationDurationSlider extends StatelessWidget {
           label: controller.vibrationDuration.round().toString(),
           onChanged: (double value) {
             controller.updateVibrationDuration(value);
+            HapticFeedback.selectionClick();
           },
         ),
       ],
