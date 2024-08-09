@@ -1,30 +1,14 @@
-# tap_code
+# TapCode
 
-A new Flutter project.
+A speech to morse code translator
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+TapCode transcribes English speech and optimizes it for encoding via morse code with an LLM.
+TapCode requires a device with support for custom vibrations to work.
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Building
 
-## Assets
-
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
-
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
-
-## Localization
-
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
-
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+Get a Gemini 1.5-flash api key and paste it in api_key.dart
+Run `flutter run` select your device or emulator to test the app.
+Run `flutter build` in a terminal window to build the app.
