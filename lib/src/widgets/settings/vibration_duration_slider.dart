@@ -14,10 +14,12 @@ class VibrationDurationSlider extends StatelessWidget {
     return Slider(
       value: controller.vibrationDuration,
       min: 50,
-      max: 1000,
-      divisions: 65,
+      max: 500,
+      divisions: 9,
       label: controller.vibrationDuration.round().toString(),
-      onChanged: controller.updateVibrationDuration,
+      onChanged: (double value) {
+        controller.updateVibrationDuration(value);
+      },
     );
   }
 }

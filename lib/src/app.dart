@@ -87,6 +87,7 @@ class TapCode extends StatelessWidget {
                         sttController: sttController,
                         geminiController: geminiController,
                         vibrationController: vibrationController,
+                        settingsController: settingsController,
                       );
                   }
                 },

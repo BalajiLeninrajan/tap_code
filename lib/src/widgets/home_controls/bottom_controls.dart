@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tap_code/src/controllers/gemini_controller.dart';
+import 'package:tap_code/src/controllers/settings/settings_controller.dart';
 import 'package:tap_code/src/controllers/stt_controller.dart';
 import 'package:tap_code/src/controllers/vibration_controller.dart';
 
@@ -9,11 +10,13 @@ class BottomControls extends StatefulWidget {
     required this.geminiController,
     required this.sttController,
     required this.vibrationController,
+    required this.settingsController,
   });
 
   final SttController sttController;
   final GeminiController geminiController;
   final VibrationController vibrationController;
+  final SettingsController settingsController;
 
   @override
   State<BottomControls> createState() => _BottomControlsState();
@@ -52,8 +55,10 @@ class _BottomControlsState extends State<BottomControls> {
                     setState(() {
                       _isVibrating = true;
                     });
-                    int duration = widget.vibrationController
-                        .vibrate(widget.geminiController.generatedText, 200);
+                    int duration = widget.vibrationController.vibrate(
+                      widget.geminiController.generatedText,
+                      widget.settingsController.vibrationDuration.round(),
+                    );
                     await Future.delayed(Duration(milliseconds: duration));
                     setState(() {
                       _isVibrating = false;

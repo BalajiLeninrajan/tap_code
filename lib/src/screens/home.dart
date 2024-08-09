@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:tap_code/src/controllers/gemini_controller.dart';
+import 'package:tap_code/src/controllers/settings/settings_controller.dart';
 import 'package:tap_code/src/controllers/stt_controller.dart';
 import 'package:tap_code/src/controllers/vibration_controller.dart';
 
@@ -15,11 +16,13 @@ class HomeView extends StatelessWidget {
     required this.sttController,
     required this.geminiController,
     required this.vibrationController,
+    required this.settingsController,
   });
 
   final SttController sttController;
   final GeminiController geminiController;
   final VibrationController vibrationController;
+  final SettingsController settingsController;
 
   static const routeName = '/';
 
@@ -35,6 +38,7 @@ class HomeView extends StatelessWidget {
         sttController: sttController,
         geminiController: geminiController,
         vibrationController: vibrationController,
+        settingsController: settingsController,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: RecordingButton(
