@@ -22,12 +22,12 @@ class SettingsView extends StatelessWidget {
         title: const Text('Settings'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(64),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ThemeModeSelector(controller: controller),
+              const SizedBox(height: 32),
               VibrationDurationSlider(controller: controller),
             ],
           ),

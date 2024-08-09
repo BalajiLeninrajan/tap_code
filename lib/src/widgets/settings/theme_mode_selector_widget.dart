@@ -12,9 +12,8 @@ class ThemeModeSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<ThemeMode>(
-      // Read the selected themeMode from the controller
+      isExpanded: true,
       value: controller.themeMode,
-      // Call the updateThemeMode method any time the user selects a theme.
       onChanged: controller.updateThemeMode,
       items: const [
         DropdownMenuItem(

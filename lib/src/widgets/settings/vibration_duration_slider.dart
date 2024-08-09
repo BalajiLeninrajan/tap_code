@@ -11,15 +11,22 @@ class VibrationDurationSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Slider(
-      value: controller.vibrationDuration,
-      min: 50,
-      max: 500,
-      divisions: 9,
-      label: controller.vibrationDuration.round().toString(),
-      onChanged: (double value) {
-        controller.updateVibrationDuration(value);
-      },
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        const Text('Vibration Duration'),
+        Slider(
+          value: controller.vibrationDuration,
+          min: 50,
+          max: 500,
+          divisions: 9,
+          label: controller.vibrationDuration.round().toString(),
+          onChanged: (double value) {
+            controller.updateVibrationDuration(value);
+          },
+        ),
+      ],
     );
   }
 }
