@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:tap_code/src/controllers/settings/settings_controller.dart';
-import 'package:tap_code/src/widgets/theme_mode_selector_widget.dart';
+import 'package:tap_code/src/widgets/settings/theme_mode_selector_widget.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
